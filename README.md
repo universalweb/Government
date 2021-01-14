@@ -14,7 +14,7 @@ Universal Web Republic Governance &amp; Voting
     <li><a href=""></a></li>
 </ul>
 
-<h4>HOUSE BRANCH MEMBERS</h4>
+<h4>HOUSE BRANCH MEMBERS (Pending)</h4>
 
 <ul>
     <li><a href="https://github.com/Christiaan99">Chris</a></li>
