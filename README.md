@@ -6,7 +6,7 @@ Universal Web Republic Governance &amp; Voting
 <h3>MANUAL VOTE + PROPOSAL SUBMIT</h3>
 
 <p>
-For manual requests to the vote address you can use this <a href="https://universalweb.github.io/Government/site/index.html">tool</a>
+For manual requests to the vote address you can use this dApp <a href="https://universalweb.github.io/Government/site/index.html">tool</a>. First make sure to click connect to link a metamask wallet to the page. Then input the proper template and info for a proposal or vote.
 </p>
 
 <hr />
