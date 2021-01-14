@@ -3,7 +3,7 @@ Universal Web Republic Governance &amp; Voting
 
 <hr />
 
-<h1>MANUAL VOTE + PROPOSAL SUBMIT</h1>
+<h3>MANUAL VOTE + PROPOSAL SUBMIT</h3>
 
 <p>
 For manual requests to the vote address you can use this <a href="https://universalweb.github.io/Government/site/index.html">tool</a>
