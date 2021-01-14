@@ -1,6 +1,16 @@
 # Government
 Universal Web Republic Governance &amp; Voting
 
+<hr />
+
+<h1>MANUAL VOTE + PROPOSAL SUBMIT</h1>
+
+<p>
+For manual requests to the vote address you can use this <a href="https://universalweb.github.io/Government/site/index.html">tool</a>
+</p>
+
+<hr />
+
 <h4>EXECUTIVE BRANCH MEMBERS</h4>
 
 <ul>
