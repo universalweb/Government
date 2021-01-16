@@ -5,7 +5,9 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <script src="https://cdn.jsdelivr.net/npm/ractive"></script>
+        <script src="/site/proposals.js"></script>
+        <script src="/site/index.js" defer></script>
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -14,75 +16,34 @@
     </head>
 
     <body>
-        <div class="container-sm">
-            <label for="basic-url" class="form-label"></label>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon3">VALUE</span>
-                <input type="text" class="form-control" id="textarea" aria-describedby="basic-addon3">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">UNIVERSAL WEB PROPOSALS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/site/index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="https://github.com/universalweb/Government">GITHUB</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="https://etherscan.io/address/0x2096F2bcdca693a6613b928aCbB39Ef6AC669826">ADDRESS</a>
+                        </li>
+                    </ul>
+                </div>
+                <form class="d-flex">
+                    <button type="button" class="btn btn-outline-success" id="connectButton">CONNECT</button>
+                </form>
             </div>
-            <button type="button" class="btn btn-dark" id="connectButton">CONNECT</button>
-            <button type="button" class="btn btn-primary right" id="submitButton">SUBMIT</button>
-        </div>
+        </nav>
+        <div id="proposals"></div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
             crossorigin="anonymous"></script>
-        <script>
-            (async () => {
-                const initialize = () => {
-                    const onboardButton = document.getElementById('connectButton');
-                    const submitButton = document.getElementById('submitButton');
-                    const textarea = document.getElementById('textarea');
-                    const isMetaMaskInstalled = () => {
-                        const { ethereum } = window;
-                        return Boolean(ethereum && ethereum.isMetaMask);
-                    };
-                    const onClickConnect = async () => {
-                        try {
-                            //Will Start the MetaMask Extension
-                            await ethereum.request({ method: 'eth_requestAccounts' });
-                        } catch (error) {
-                            console.error(error);
-                        }
-                    };
-                    const MetamaskClientCheck = async () => {
-                        //Now we check to see if MetaMask is installed
-                        if (!isMetaMaskInstalled()) {
-                            //If it isn't installed we ask the user to click to install it
-                            onboardButton.innerText = 'Click here to install MetaMask!';
-                            //When the button is clicked we call th is function
-                            onboardButton.onclick = onClickInstall;
-                            //The button is now disabled
-                            onboardButton.disabled = false;
-                        } else {
-                            //If MetaMask is installed we ask the user to connect to their wallet
-                            onboardButton.innerText = 'CONNECT';
-                            //When the button is clicked we call this function to connect the users MetaMask Wallet
-                            onboardButton.onclick = onClickConnect;
-                            //The button is now disabled
-                            onboardButton.disabled = false;
-                        }
-                    };
-                    const getMeSomeVote = async () => {
-                        const transactionParameters = {
-                            to: '0x2096F2bcdca693a6613b928aCbB39Ef6AC669826', // Required except during contract publications.
-                            from: ethereum.selectedAddress, // must match user's active address.
-                            value: '0x00', // Only required to send ether to the recipient from the initiating external account.
-                            data: web3.toHex(textarea.value), // CONVERT TO HEX
-                        };
-                        // txHash is a hex string
-                        // As with any RPC call, it may throw an error
-                        const txHash = await ethereum.request({
-                            method: 'eth_sendTransaction',
-                            params: [transactionParameters],
-                        });
-                        console.log(txHash);
-                    };
-                    console.log('metaMask CONNECT STARTED');
-                    MetamaskClientCheck();
-                    submitButton.onclick = getMeSomeVote;
-                };
-                initialize();
-            })();
-        </script>
     </body>
 </html>

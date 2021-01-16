@@ -1,0 +1,23 @@
+{
+  "name": "government",
+  "version": "1.0.0",
+  "description": "Universal Web Republic Governance &amp; Voting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/universalweb/Government.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/universalweb/Government/issues"
+  },
+  "homepage": "https://github.com/universalweb/Government#readme",
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.18.0"
+  }
+}
