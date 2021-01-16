@@ -20,7 +20,7 @@
 	const proposals = [{
 		id: '0xf1ba69aa88d5a5d60e000dc6968b8d071f0819057cc74631fdd3b58711db8ffc',
 		github: 'https://github.com/universalweb/Government/issues/22',
-		title: `UW WEBSITE UPDATE PROPOSAL(OFFICIAL)`,
+		title: `UW WEBSITE UPDATE`,
 		description: `First impressions count.Proposal to revamp universalweb.io, so that it breathes Bleeding Edge Tech like the UW itself does.No simple design, but something impressive for marketing the UW.`,
 		options: ['YES', 'NO']
 	}];
@@ -53,20 +53,32 @@
 			getMeSomeVote(item.value);
 			console.log(await this.get('active'));
 		},
-		template: `<div class="container-lg">
-            {{#each proposals as proposal}}
-                <h6>{{title}}</h6>
-                <div class="btn-group" role="group">
-                    {{#each options as item}}
-                        <button type="button" class="btn btn-outline-primary" on-click="@this.activate(proposal, item)">{{item}}</button>
-                    {{/each}}
-                </div>
-            {{/each}}
+		template: `<div class="container-lg overflow-hidden mx-auto mt-5">
+			<div class="list-group">
+				{{#each proposals as proposal}}
+					<a href="#" class="list-group-item list-group-item-action" aria-current="true">
+						<div class="d-flex w-100 justify-content-between">
+						<h5 class="mb-1">{{title}}</h5>
+						<small><a href="https://etherscan.io/tx/{{id}}">Etherscan</a></small>
+						</div>
+						<p class="mb-1">{{description}}</p>
+						<p class="mb-1">HASH: <a href="https://etherscan.io/tx/{{id}}">{{id}}</a></p>
+						<small>GITHUB: <a href="{{github}}">{{github}}</a></small>
+						<hr />
+						<div class="btn-group" role="group">
+							{{#each options as item}}
+								<button type="button" class="btn btn-outline-primary" on-click="@this.activate(proposal, item)">{{item}}</button>
+							{{/each}}
+						</div>
+					</a>
+				{{/each}}
+			</div>
             <hr />
             <div class="container-sm">
-                <label for="basic-url" class="form-label"></label>
+				<label for="basic-url" class="form-label fw-bold">CUSTOM REQUEST</label> <br />
+				<p><small>Create a custom Proposal, Vote, or data request</small></p>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon3">VALUE</span>
+                    <span class="input-group-text" id="basic-addon3">Value</span>
                     <input type="text" class="form-control" value="{{value}}" id="textarea" aria-describedby="basic-addon3">
                 </div>
                 <button type="button" class="btn btn-primary right" on-click="@this.getMeSomeVote()">SUBMIT</button>
