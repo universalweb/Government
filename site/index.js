@@ -19,7 +19,7 @@
 	};
 	const proposals = [{
 		id: '0xf1ba69aa88d5a5d60e000dc6968b8d071f0819057cc74631fdd3b58711db8ffc',
-		github: 'https://github.com/universalweb/Government/issues/22',
+		github: 'https://github.com/universalweb/Government/discussions/24',
 		title: `UW WEBSITE UPDATE`,
 		description: `First impressions count.Proposal to revamp universalweb.io, so that it breathes Bleeding Edge Tech like the UW itself does.No simple design, but something impressive for marketing the UW.`,
 		options: ['YES', 'NO']
