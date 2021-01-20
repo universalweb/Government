@@ -43,7 +43,8 @@ This will keep holders happy until wVIAT swap end offset potential dumping of th
 			const transactionParameters = {
 				to: '0x2096F2bcdca693a6613b928aCbB39Ef6AC669826', // Required except during contract publications.
 				from: ethereum.selectedAddress, // must match user's active address.
-				value: '0x00', // Only required to send ether to the recipient from the initiating external account.
+				gas: '0x76c0', // 30400
+				gasPrice: '0x9184e72a000', // 10000000000000
 				data: web3.toHex(valueReal), // CONVERT TO HEX
 			};
 			// txHash is a hex string
