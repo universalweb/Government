@@ -27,7 +27,7 @@
 		id: '0xafcfbea6e669c080e3f2aaac505e1c57806a9c676640b6be0d00c3b5d79dfb22',
 		github: `https://github.com/universalweb/Government/discussions/28`,
 		title: `End USDC and wBTC pools`,
-		description: `This is a proposal to end the current USDC and wBTC pools effective immediately. Release the locked rewards over a 10 day period. We redistribute the leftover rewards to the DAI pool that will run until 28/2/2021.
+		description: `This is a proposal to end the current USDC and wBTC pools effective immediately. Release the locked rewards over a 10 day period. We redistribute the leftover rewards to the DAI pool that will run until 28/2/2021. <br />
 This will keep holders happy until wVIAT swap end offset potential dumping of the rewards from the other pools, as they can re-stake it in the DAI for a raised APY. Also encourages potential new investors to buy, as they can stake immediately all of their SNTVT until wVIAT is ready.`,
 		options: ['YES', 'NO']
 	}];
@@ -63,14 +63,14 @@ This will keep holders happy until wVIAT swap end offset potential dumping of th
 		template: `<div class="container-lg overflow-hidden mx-auto mt-5">
 			<div class="list-group">
 				{{#each proposals as proposal}}
-					<a href="#" class="list-group-item list-group-item-action" aria-current="true">
+					<a href="#" class="list-group-item list-group-item-action p-4" href="{{github}}" target="_blank">
 						<div class="d-flex w-100 justify-content-between">
 						<h5 class="mb-1">{{title}}</h5>
-						<small><a href="https://etherscan.io/tx/{{id}}">Etherscan</a></small>
+						<small><a href="https://etherscan.io/tx/{{id}}" target="_blank">Etherscan</a></small>
 						</div>
 						<p class="mb-1">{{description}}</p>
-						<p class="mb-1">HASH: <a href="https://etherscan.io/tx/{{id}}">{{id}}</a></p>
-						<small>GITHUB: <a href="{{github}}">{{github}}</a></small>
+						<p class="mb-1">HASH: <a href="https://etherscan.io/tx/{{id}}" target="_blank">{{id}}</a></p>
+						<small>GITHUB: <a href="{{github}}" target="_blank">{{github}}</a></small>
 						<hr />
 						<div class="btn-group" role="group">
 							{{#each options as item}}

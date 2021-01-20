@@ -13,6 +13,8 @@
 		"globalThis": true,
 		"window": true,
 		"top": true,
+		"ethereum": true,
+		"web3": true
 	},
 	"parserOptions": {
 		"sourceType": "script",
