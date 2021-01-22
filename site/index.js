@@ -64,7 +64,7 @@ This will keep holders happy until wVIAT swap end offset potential dumping of th
 		template: `<div class="container-lg overflow-hidden mx-auto mt-5">
 			<div class="list-group">
 				{{#each proposals as proposal}}
-					<a href="#" class="list-group-item list-group-item-action p-4" href="{{github}}" target="_blank">
+					<div href="#" class="list-group-item list-group-item-action p-4" target="_blank">
 						<div class="d-flex w-100 justify-content-between">
 						<h5 class="mb-1">{{title}}</h5>
 						<small><a href="https://etherscan.io/tx/{{id}}" target="_blank">Etherscan</a></small>
@@ -78,7 +78,7 @@ This will keep holders happy until wVIAT swap end offset potential dumping of th
 								<button type="button" class="btn btn-outline-primary" on-click="@this.activate(proposal, item)">{{item}}</button>
 							{{/each}}
 						</div>
-					</a>
+					</div>
 				{{/each}}
 			</div>
             <hr />
