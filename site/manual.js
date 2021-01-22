@@ -56,4 +56,19 @@
 		}
 	}
 	return getTransactionsByAccount('0x2096F2bcdca693a6613b928aCbB39Ef6AC669826');
+	const mainWallet = `https://api.etherscan.io/api?module=account&action=txlist&address=0x2096F2bcdca693a6613b928aCbB39Ef6AC669826&sort=asc`;
+	const request = new Request(mainWallet, {
+		method: 'GET'
+	});
+	const response = await fetch(mainWallet);
+	let transactions;
+	if (response.status === 200) {
+		transactions = await response.json();
+	}
+	console.log(transactions.result);
+	transactions.result.forEach((item) => {
+		if (item.input) {
+			console.log(web3.toAscii(item.input));
+		}
+	});
 })();
