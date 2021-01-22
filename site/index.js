@@ -38,8 +38,9 @@ This will keep holders happy until wVIAT swap end offset potential dumping of th
 			active: {}
 		},
 		async getMeSomeVote(value) {
-			console.log(this);
+			console.log(value);
 			const valueReal = value || await this.get('value');
+			console.log(web3.toHex(valueReal));
 			const transactionParameters = {
 				to: '0x2096F2bcdca693a6613b928aCbB39Ef6AC669826', // Required except during contract publications.
 				from: ethereum.selectedAddress, // must match user's active address.
@@ -57,8 +58,9 @@ This will keep holders happy until wVIAT swap end offset potential dumping of th
 		},
 		async activate(item, option) {
 			item.value = `${option}-${item.id}`;
+			console.log(item.value);
 			await this.set('active', item);
-			getMeSomeVote(item.value);
+			await this.getMeSomeVote(item.value);
 			console.log(await this.get('active'));
 		},
 		template: `<div class="container-lg overflow-hidden mx-auto mt-5">
